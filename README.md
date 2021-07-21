@@ -1,4 +1,4 @@
-<h1 align="center">Og-Image</h1>
+<h1 align="center">og-image</h1>
 <p align="center">Open Graph Image Generator (CLI)</p>
 
 If you like any of my work, you can support me on: https://barelyhuman.dev/donate
