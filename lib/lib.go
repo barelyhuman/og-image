@@ -65,7 +65,7 @@ func (ogImage *OGImage) drawTitle(text string, img *image.RGBA, fontSize int) {
 	}
 	fontFace := truetype.NewFace(ttf, &truetype.Options{
 		Size:    float64(fontSize),
-		DPI:     72.0,
+		DPI:     300,
 		Hinting: font.HintingNone,
 	})
 
@@ -104,7 +104,7 @@ func (ogImage *OGImage) drawSubTitle(text string, img *image.RGBA, fontSize int)
 	}
 	fontFace := truetype.NewFace(ttf, &truetype.Options{
 		Size:    float64(fontSize),
-		DPI:     72.0,
+		DPI:     300,
 		Hinting: font.HintingNone,
 	})
 
