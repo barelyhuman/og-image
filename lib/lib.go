@@ -46,7 +46,7 @@ func DrawImage(title string, subTitle string, fontSize int, subFontSize int, col
 
 	if len(backgroundImageURL) > 0 {
 		img := loadImageFromURL(backgroundImageURL)
-		backgroundImage := imaging.Fill(img, dc.Width(), dc.Height(), imaging.Center, imaging.NearestNeighbor)
+		backgroundImage := imaging.Fill(img, dc.Width(), dc.Height(), imaging.Center, imaging.Lanczos)
 		dc.DrawImage(backgroundImage, 0, 0)
 	} else {
 		dc.DrawRectangle(0, 0, width, height)
