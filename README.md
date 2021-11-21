@@ -8,15 +8,24 @@ If you like any of my work, you can support me on: https://barelyhuman.dev/donat
 ## Usage
 
 ```bash
-Usage of og-image:
+❯ cat .commitlog.release
+v0.0.2
+
+Usage of og-image: 
+  -background-url string
+    	URL for the background
+  -color string
+    	Font Color (default "#000")
   -desc string
-        Description or Sub Title
+    	Description or Sub Title
   -out string
-        File to output to, will export a png (default "./og-image.png")
-  -size int
-        Font Size (default 45)
+    	File to output to, will export a png (default "./og-image.png")
+  -size-one int
+    	Font Size for title (default 16)
+  -size-two int
+    	Font Size For description (default 12)
   -title string
-        Title
+    	Title
 ```
 
 ## Install
