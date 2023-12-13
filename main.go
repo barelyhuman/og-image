@@ -15,6 +15,7 @@ func main() {
 	subFontSize := flag.Int("size-two", 12, "Font Size For description")
 	color := flag.String("color", "#000", "Font Color")
 	backgroundImageURL := flag.String("background-url", "", "URL for the background")
+	backgroundImageColor := flag.String("background-color", "", "hex for the background")
 	outFile := flag.String("out", "./og-image.png", "File to output to, will export a png")
 
 	flag.Parse()
@@ -23,6 +24,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	img := lib.DrawImage(*title, *subTitle, *fontSize, *subFontSize, *color, *backgroundImageURL)
+	img := lib.DrawImage(*title, *subTitle, *fontSize, *subFontSize, *color, *backgroundImageURL, *backgroundImageColor)
 	lib.WriteImage(file, img)
 }

@@ -32,7 +32,7 @@ const dev = false
 var embedFS embed.FS
 var fontFile = "fonts/Inter-Regular.ttf"
 
-func DrawImage(title string, subTitle string, fontSize int, subFontSize int, color string, backgroundImageURL string) image.Image {
+func DrawImage(title string, subTitle string, fontSize int, subFontSize int, color string, backgroundImageURL string, backgroundImageColor string) image.Image {
 	titleFontFace := loadFont(fontSize)
 	subtitleFontFace := loadFont(subFontSize)
 
@@ -44,7 +44,11 @@ func DrawImage(title string, subTitle string, fontSize int, subFontSize int, col
 
 	dc := gg.NewContext(width, height)
 
-	if len(backgroundImageURL) > 0 {
+	if len(backgroundImageColor) > 0 {
+		dc.DrawRectangle(0, 0, width, height)
+		dc.SetHexColor(backgroundImageColor)
+		dc.Fill()
+	} else if len(backgroundImageURL) > 0 {
 		img := loadImageFromURL(backgroundImageURL)
 		backgroundImage := imaging.Fill(img, dc.Width(), dc.Height(), imaging.Center, imaging.Lanczos)
 		dc.DrawImage(backgroundImage, 0, 0)
