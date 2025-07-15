@@ -13,6 +13,7 @@ func main() {
 	subTitle := flag.String("desc", "", "Description or Sub Title")
 	fontSize := flag.Int("size-one", 16, "Font Size for title")
 	subFontSize := flag.Int("size-two", 12, "Font Size For description")
+	padding := flag.Int("padding", 40, "Padding")
 	color := flag.String("color", "#000", "Font Color")
 	backgroundImageURL := flag.String("background-url", "", "URL for the background")
 	backgroundImageColor := flag.String("background-color", "", "hex for the background")
@@ -24,6 +25,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	img := lib.DrawImage(*title, *subTitle, *fontSize, *subFontSize, *color, *backgroundImageURL, *backgroundImageColor)
+	img := lib.DrawImage(*title, *subTitle, *fontSize, *subFontSize, *color, *backgroundImageURL, *backgroundImageColor, *padding)
 	lib.WriteImage(file, img)
 }
